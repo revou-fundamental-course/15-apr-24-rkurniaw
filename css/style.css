@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #212121;
+  --tersier-color: #f1f6f8;
+}
+
+.dark-theme {
+  --primary-color: #000106;
+  --secondary-color: #fff;
+  --tersier-color: #000;
+}
+
+body {
+  width: 100%;
+  min-height: 200px;
+  font-family: "Roboto", sans-serif;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+main {
+  min-height: 100vh;
+  margin: 0 10%;
+  padding: 2em 0;
+}
+
+.dark-mode {
+  text-align: end;
+  padding-right: 86px;
+}
+
+#icon {
+  width: 30px;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+
+.container {
+  background-color: var(--tersier-color);
+  margin: 0 20%;
+  border: 2px solid rgb(205, 205, 205);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+header .author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+header p .name-author {
+  padding: 0 4px 0 4px;
+  color: inherit;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+
+header p .github-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  color: var(--secondary-color);
+  border: 1.7px solid var(--secondary-color);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+
+header p .github-icon:hover {
+  border: 1.5px solid slateblue;
+  background-color: slateblue;
+  color: white;
+}
+
+header p a svg {
+  width: 16px;
+  fill: currentColor;
+}
+
+.section-title {
+  padding: 16px 0;
+}
+
+.section-celcius,
+.section-fahrenheit,
+.section-conversion {
+  margin-left: 16px;
+  padding-bottom: 16px;
+}
+
+.section-celcius label,
+.section-fahrenheit label,
+.section-conversion label {
+  padding-bottom: 8px;
+  display: block;
+}
+
+.input-celcius,
+.input-fahrenheit,
+.input-conversion {
+  width: 75%;
+  height: 54px;
+  margin: auto 16px;
+  padding: 0 8px;
+  border: 2px solid rgb(205, 205, 205);
+  border-radius: 4px;
+}
+
+.input-celcius:hover {
+  border: 2px solid rgba(0, 0, 255, 0.496);
+}
+
+.section-button {
+  margin-left: 16px;
+  padding-bottom: 8px;
+}
+
+.section-button button {
+  margin-right: 16px;
+  padding: 4px 8px;
+  border: 2px solid rgb(205, 205, 205);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-button button:active {
+  transform: scale(0.96);
+}
+
+.button-konversi {
+  background-color: #28a36a;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s ease-out;
+}
+
+.button-konversi:hover {
+  background-color: #1f8656;
+  transition: 0.2s ease-in;
+}
+
+.button-reset {
+  background-color: #ffc802;
+  color: black;
+  font-weight: bold;
+  transition: 0.2s ease-out;
+}
+
+.button-reset:hover {
+  background-color: #f2b119;
+  transition: 0.2s ease-in;
+}
+
+.button-reverse {
+  background-color: #01a6e8;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s ease-out;
+}
+
+.button-reverse:hover {
+  background-color: #098dc1;
+  transition: 0.2s ease-in;
+}
+
+.switch-funtion {
+  margin-left: 16px;
+  color: #704cff;
+  padding-bottom: 16px;
+}
+
+.function-view {
+  font-weight: bold;
+  padding-bottom: 16px;
+}
+
+.function-description {
+  padding-top: 16px;
+}
+
+.function-view1,
+.function-view2 {
+  padding: 16px 0;
+}
+
+span {
+  font-family: serif;
+  font-size: 19px;
+  /* font-weight: bold; */
+}
+
+.char-italic {
+  font-style: italic;
+}
+
+footer .footer {
+  margin-top: 32px;
+  border-top: 2px solid var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div .github-icon,
+.instagram-icon,
+.facebook-icon,
+.twitter-icon,
+.linkedin-icon,
+.youtube-icon {
+  margin-top: 32px;
+  width: 36px;
+  height: 36px;
+  margin-right: 4px;
+  color: var(--secondary-color);
+  border: 1.7px solid var(--secondary-color);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+
+footer div .github-icon:hover {
+  border: 1.5px solid slateblue;
+  background-color: slateblue;
+  color: white;
+}
+
+footer div .instagram-icon:hover {
+  border: 1.5px solid #fee140;
+  background-image: linear-gradient(to right, #84036f 0%, #fee140 100%);
+  color: white;
+}
+
+footer div .facebook-icon:hover {
+  border: 1.5px solid rgb(0, 76, 255);
+  background-color: rgb(0, 76, 255);
+  color: white;
+}
+
+footer div .twitter-icon:hover {
+  border: 1.5px solid rgb(0, 170, 255);
+  background-color: rgb(0, 170, 255);
+  color: white;
+}
+
+footer div .linkedin-icon:hover {
+  border: 1.5px solid blue;
+  background-color: blue;
+  color: white;
+}
+
+footer div .youtube-icon:hover {
+  border: 1.5px solid red;
+  background-color: red;
+  color: white;
+}
+
+footer div a svg {
+  width: 24px;
+  fill: currentColor;
+}
+
+footer .copyright {
+  margin-top: 16px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    background-color: var(--primary-color);
+    margin: 0 5%;
+  }
+
+  .container {
+    margin: 0 10%;
+  }
+
+  .dark-mode {
+    text-align: end;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    background-color: var(--primary-color);
+    margin: 0 5%;
+  }
+
+  .container {
+    margin: 0 10%;
+  }
+
+  .dark-mode {
+    text-align: end;
+    padding-right: 26px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  main {
+    background-color: var(--primary-color);
+    margin: auto;
+  }
+
+  .container {
+    margin: 0 10%;
+  }
+
+  .dark-mode {
+    text-align: end;
+    padding-right: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .input-conversion {
+    font-size: 12px;
+  }
+
+  .dark-mode {
+    text-align: end;
+    padding-right: 32px;
+  }
+}
