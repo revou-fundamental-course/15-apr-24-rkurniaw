@@ -20,7 +20,10 @@
         <img src="/assets/moon.png" id="icon" />
       </div>
       <header>
+        <div class="title">
         <h1>Aplikasi Konversi Suhu</h1>
+        <img src="/assets/thermlight.png" id="therm">
+        </div>
         <p class="author">
           Dibuat oleh : <span class="name-author">Rizki Kurniawan</span>
           <!-- Github -->
@@ -45,7 +48,6 @@
       <!-- header end -->
       <!-- contain start -->
       <div class="container">
-        <div>
           <!-- section title start -->
           <section class="section-title">
             <p>
@@ -55,39 +57,76 @@
             </p>
           </section>
           <!-- section title end -->
-          <!-- section celcius start -->
-          <section class="section-celcius">
-            <label>Celcius (&deg;C)</label>
-            <input
-              class="input-celcius"
-              type="number"
-              name="celcius"
-              id="celcius"
-              placeholder="&deg;C"
-              pattern="[0-9][+-]"
-            />
+
+          <!-- section input start -->
+          <section class="section-input">
+            <div id="start-celcius" class="start-celcius">
+              <label for="celcius-input">Celcius (&deg;C)</label>
+              <input
+                class="input-celcius"
+                type="number"
+                name="celcius-input"
+                id="celcius-input"
+                placeholder="&deg;C"
+                pattern="[0-9][+-]"
+              />
+            </div>
+            <div id="start-fahrenheit" class="start-fahrenheit display-off">
+              <label for="fahrenheit-input">Fahrenheit (&deg;F)</label>
+              <input
+                class="input-fahrenheit"
+                type="number"
+                name="fahrenheit-input"
+                id="fahrenheit-input"
+                placeholder="&deg;F"
+                pattern="[0-9][+-]"
+              />
+            </div>
           </section>
-          <!-- section celcius end -->
+          <div id="alert" class="alert display-off">
+            <p>Masukkan nilai suhu <span class="char-italic">S</span>&deg;</p>
+          </div>
+          <!-- section input end -->
+
           <!-- section button start -->
           <section class="section-button">
-            <button class="button-konversi" id="konversi">Konversi</button>
-            <button class="button-reset" id="reset">Reset</button>
-            <button class="button-reverse" id="reverse">Reverse</button>
+            <button class="button-konversi" id="btn-conversion">
+              Konversi
+            </button>
+            <button class="button-reset" id="btn-reset">Reset</button>
+            <button class="button-reverse" id="btn-reverse">Reverse</button>
           </section>
           <!-- section button end -->
-          <!-- section fahrenheit start -->
-          <section class="section-fahrenheit">
-            <label>Fahrenheit (&deg;F)</label>
-            <input
-              class="input-fahrenheit"
-              type="number"
-              name="fahrenheit"
-              id="fahrenheit"
-              placeholder="&deg;F"
-              pattern="[0-9][+-]"
-            />
+
+          <!-- section output start -->
+          <section class="section-output">
+            <div id="point-celcius" class="point-celcius display-off">
+              <label>Celcius (&deg;C)</label>
+              <input
+                class="output-celcius"
+                type="number"
+                name="celcius-output"
+                id="celcius-output"
+                placeholder="&deg;C"
+                pattern="[0-9][+-]"
+                disabled
+              />
+            </div>
+            <div id="point-fahrenheit" class="point-fahrenheit">
+              <label>Fahrenheit (&deg;F)</label>
+              <input
+                class="output-fahrenheit"
+                type="number"
+                name="fahrenheit-output"
+                id="fahrenheit-output"
+                placeholder="&deg;F"
+                pattern="[0-9][+-]"
+                disabled
+              />
+            </div>
           </section>
-          <!-- section fahrenheit end -->
+          <!-- section output end -->
+
           <!-- section conversion start -->
           <section class="section-conversion">
             <label>Cara Kalkulasi</label>
@@ -96,42 +135,89 @@
               type="text"
               name="conversion"
               id="conversion"
-              placeholder="S&deg;C * (9/5) + 32 = S&deg;F"
+              placeholder="-- Tampilkan Rumus --"
               pattern="[0-9][+-]"
+              disabled
             />
           </section>
           <!-- section conversion end -->
+
           <!-- section function start -->
-          <section class="funtion-conversion">
-            <p class="switch-funtion">Fahrenheit ke Celcius</p>
-            <p class="function-view">
-              Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)
-            </p>
-            <hr />
-            <p class="function-description">
-              suhu <span class="char-italic">S</span> dalam derajat Fahrenheit
-              (&deg;F) sama dengan suhu <span class="char-italic">S</span> dalam
-              derajat Celcius (&deg;C) kali <span>9/5</span> tambah
-              <span>32</span>.
-            </p>
-            <p class="function-view1">
-              <span class="">
-                <span class="char-italic">S</span><sub>(&deg;F)</sub> = (<span
-                  class="char-italic"
-                  >S</span
-                ><sub>(&deg;C)</sub> x <span>9/5)</span> + <span>32</span>
-              </span>
-            </p>
-            <p>atau</p>
-            <p class="function-view2">
-              <span>
-                <span class="char-italic">S</span><sub>(&deg;F)</sub> = (<span
-                  class="char-italic"
-                  >S</span
-                ><sub>(&deg;C)</sub> x 1.8) + 32</span
-              >
-            </p>
+          <!-- view function celcius to fahrenheit start -->
+          <section
+            id="view-function-celcius"
+            class="function-conversion display-off"
+          >
+            <article class="switch-funtion">
+              <h3>Celcius &#129094; Fahrenheit</h3>
+              <p class="function-view">
+                Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)
+              </p>
+              <hr />
+              <p class="function-description">
+                suhu <span class="char-italic">S</span> dalam derajat Fahrenheit
+                (&deg;F) sama dengan suhu
+                <span class="char-italic">S</span> dalam derajat Celcius
+                (&deg;C) kali <span>9/5</span> tambah <span>32</span>.
+              </p>
+              <p class="function-view1">
+                <span class="">
+                  <span class="char-italic">S</span><sub>(&deg;F)</sub> = (<span
+                    class="char-italic"
+                    >S</span
+                  ><sub>(&deg;C)</sub> x <span>9/5)</span> + <span>32</span>
+                </span>
+              </p>
+              <p>atau</p>
+              <p class="function-view2">
+                <span>
+                  <span class="char-italic">S</span><sub>(&deg;F)</sub> = (<span
+                    class="char-italic"
+                    >S</span
+                  ><sub>(&deg;C)</sub> x 1.8) + 32</span
+                >
+              </p>
+            </article>
           </section>
+          <!-- view function celcius to fahrenheit end -->
+
+          <!-- view function fahrenheit to celcius start -->
+          <section
+            id="view-function-fahrenheit"
+            class="function-conversion display-off"
+          >
+            <article class="switch-funtion">
+              <h3>Fahrenheit &#129094; Celcius</h3>
+              <p class="function-view">
+                Cara Konversi Dari Fahrenheit (&deg;F) ke Celcius (&deg;C)
+              </p>
+              <hr />
+              <p class="function-description">
+                suhu <span class="char-italic">S</span> dalam derajat Celcius
+                (&deg;C) sama dengan suhu
+                <span class="char-italic">S</span> dalam derajat Fahrenheit
+                (&deg;F) dikurangi <span>32</span> dikali <span>(5/9)</span>.
+              </p>
+              <p class="function-view1">
+                <span class="">
+                  <span class="char-italic">S</span><sub>(&deg;C)</sub> = (<span
+                    class="char-italic"
+                    >S</span
+                  ><sub>(&deg;F)</sub> - <span>32)</span> x <span>5/9</span>
+                </span>
+              </p>
+              <p>atau</p>
+              <p class="function-view2">
+                <span>
+                  <span class="char-italic">S</span><sub>(&deg;C)</sub> = (<span
+                    class="char-italic"
+                    >S</span
+                  ><sub>(&deg;F)</sub> - 32) x 5 : 9</span
+                >
+              </p>
+            </article>
+          </section>
+          <!-- view function fahrenheit to celcius end -->
           <!-- section function end -->
         </div>
       </div>
