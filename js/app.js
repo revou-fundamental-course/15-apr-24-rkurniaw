@@ -4,11 +4,11 @@ let icon = document.getElementById("icon");
 icon.onclick = function () {
   document.body.classList.toggle("dark-theme");
   if (document.body.classList.contains("dark-theme")) {
-    icon.src = "/assets/sun.png";
-    document.getElementById("therm").src = "/assets/thermdark.png";
+    icon.src = "assets/sun.png";
+    document.getElementById("therm").src = "assets/thermdark.png";
   } else {
-    icon.src = "/assets/moon.png";
-    document.getElementById("therm").src = "/assets/thermlight.png";
+    icon.src = "assets/moon.png";
+    document.getElementById("therm").src = "assets/thermlight.png";
   }
 };
 
